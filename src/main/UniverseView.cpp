@@ -18,6 +18,10 @@
 
 #include <cmath>
 
+#ifdef __linux__
+#include "GL/glew.h"
+#endif
+
 #include <QGLWidget>
 
 #include <vesta/OGLHeaders.h>
@@ -354,6 +358,8 @@ public:
         setAttribute(Qt::WA_NoSystemBackground);
         setAttribute(Qt::WA_OpaquePaintEvent);
         setBackgroundRole(QPalette::Window);
+
+        glInit();
     }
 
 
