@@ -566,8 +566,8 @@ storedeploy {
 }
 
 spice {
-    SPICE_HEADER_PATH = /Users/claurel/dev/spice/mac64/cspice/include
-    SPICE_LIB_PATH = /Users/claurel/dev/spice/mac64/cspice/lib
+    SPICE_HEADER_PATH = /home/eferguso/Desktop/spice/cspice/include
+    SPICE_LIB_PATH = /home/eferguso/Desktop/spice/cspice/lib
     INCLUDEPATH += $$SPICE_HEADER_PATH
     DEFINES += SPICE_ENABLED
     SOURCES += $$MAIN_PATH/spice/SpiceTrajectory.cpp $$MAIN_PATH/spice/SpiceRotationModel.cpp
@@ -636,7 +636,7 @@ ffmpeg {
     # ##############################################################################
 }
 
-DEFINES += EIGEN_USE_NEW_STDVECTOR
+DEFINES += EIGEN2_SUPPORT_STAGE10_FULL_EIGEN2_API EIGEN_USE_NEW_STDVECTOR
 DEFINES += QJSON_EXPORT=
 
 win32-g++ {

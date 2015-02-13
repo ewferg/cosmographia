@@ -124,7 +124,7 @@ AlignedEllipsoid::intersection(const Hyperplane<double, 3>& p, bool* foundInters
         Vector3d v1 = v0.cross(n);
 
         // Transform the spanning vectors and center back to the original space
-        DiagonalMatrix<Vector3d> D = m_semiAxes.asDiagonal();
+        DiagonalMatrix<double,3> D = m_semiAxes.asDiagonal();
         Vector3d center = D * (n * p1.offset());
         v0              = D * (v0 * r);
         v1              = D * (v1 * r);
@@ -189,7 +189,7 @@ AlignedEllipsoid::orthogonalProjection(const Vector3d& planeNormal) const
     Vector3d plane_origin, plane_v0, plane_v1;
     planeToSpanningVectors(p1, plane_origin, plane_v0, plane_v1);
 
-    DiagonalMatrix<Vector3d> invM = m_semiAxes.asDiagonal();
+    DiagonalMatrix<double,3> invM = m_semiAxes.asDiagonal();
     plane_v0     = invM * (plane_v0);
     plane_v1     = invM * (plane_v1);
 
